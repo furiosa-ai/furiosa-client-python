@@ -8,7 +8,8 @@ setup_requires = ["setuptools"]
 install_requires = [
     "python-dotenv==0.15.0",
     "pyyaml==5.4.1",
-    "openapi-client==1"
+    "urllib3==1.26",
+    "dateutils=0.6"
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
