@@ -1,1 +1,5 @@
 .idea
+.openapi-generator/
+build/
+furiosa_client.egg-info/
+venv/

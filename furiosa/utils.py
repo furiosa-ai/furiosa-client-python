@@ -1,8 +1,8 @@
 import os
 
-from furiosa.client import ApiClient, Configuration
-from furiosa.client.api.account_v1_api import AccountV1Api
-from furiosa.client.model.login_request import LoginRequest
+from furiosa.openapi import ApiClient, Configuration
+from furiosa.openapi.api.account_v1_api import AccountV1Api
+from furiosa.openapi.model.login_request import LoginRequest
 
 
 def login_account(client: ApiClient):

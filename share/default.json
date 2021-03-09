@@ -1,5 +1,5 @@
 {
   "apiDocs": false,
   "generateSourceCodeOnly": true,
-  "packageName": "furiosa.client"
+  "packageName": "furiosa.openapi"
 }

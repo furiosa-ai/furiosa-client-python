@@ -3,8 +3,8 @@ from pathlib import Path
 
 import dotenv
 
-from furiosa.client.configuration import Configuration
-from furiosa.client.model.api_key import ApiKey
+from furiosa.openapi.configuration import Configuration
+from furiosa.openapi.model.api_key import ApiKey
 
 DEFAULT_API_ENDPOINT='https://api.furiosa.ai/api/v1'
 FURIOSA_API_ENDPOINT_ENV='FURIOSA_API_ENDPOINT'
