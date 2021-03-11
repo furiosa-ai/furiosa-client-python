@@ -6,10 +6,10 @@ from setuptools import setup
 
 setup_requires = ["setuptools"]
 install_requires = [
-    "python-dotenv==0.15.0",
-    "pyyaml==5.4.1",
-    "urllib3==1.26",
-    "dateutils=0.6"
+    "python-dotenv",
+    "pyyaml",
+    "urllib3",
+    "dateutils"
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
