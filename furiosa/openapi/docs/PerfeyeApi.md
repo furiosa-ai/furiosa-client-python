@@ -55,10 +55,12 @@ with furiosa.openapi.ApiClient(configuration) as api_client:
     x_request_id = "X-Request-ID_example" # str | 
     source = open('/path/to/file', 'rb') # file_type | a byte array of a source image
     target_npu_spec = KvConfig(
-        key=None,
+        key="key_example",
+        value=,
     ) # KvConfig |  (optional)
     compiler_config = KvConfig(
-        key=None,
+        key="key_example",
+        value=,
     ) # KvConfig |  (optional)
 
     # example passing only required values which don't have defaults set

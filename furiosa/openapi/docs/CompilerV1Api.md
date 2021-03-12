@@ -61,8 +61,8 @@ with furiosa.openapi.ApiClient(configuration) as api_client:
     api_instance = compiler_v1_api.CompilerV1Api(api_client)
     x_request_id = "X-Request-ID_example" # str | Unique request Id to identify the user request
     source = open('/path/to/file', 'rb') # file_type | a byte array of a source image
-    target_npu_spec = "target_npu_spec_example" # str |  (optional)
-    compiler_config = "compiler_config_example" # str |  (optional)
+    target_npu_spec = "target_npu_spec_example" # str, none_type |  (optional)
+    compiler_config = "compiler_config_example" # str, none_type |  (optional)
     target_ir = "target_ir_example" # str | one of followings: dfg, ldfg, cdfg, gir, lir, enf (optional)
     compiler_report = True # bool | include the compiler report if true (optional)
     mem_alloc_report = True # bool | include the memory allocation report (optional)
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **x_request_id** | **str**| Unique request Id to identify the user request |
  **source** | **file_type**| a byte array of a source image |
- **target_npu_spec** | **str**|  | [optional]
- **compiler_config** | **str**|  | [optional]
+ **target_npu_spec** | **str, none_type**|  | [optional]
+ **compiler_config** | **str, none_type**|  | [optional]
  **target_ir** | **str**| one of followings: dfg, ldfg, cdfg, gir, lir, enf | [optional]
  **compiler_report** | **bool**| include the compiler report if true | [optional]
  **mem_alloc_report** | **bool**| include the memory allocation report | [optional]

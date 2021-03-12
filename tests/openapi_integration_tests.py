@@ -10,6 +10,7 @@ from furiosa.openapi.api.compiler_v1_api import CompilerV1Api
 from furiosa.openapi.api.version_api import VersionApi
 from furiosa.openapi.models import VersionInfo, LoginRequest, ApiKeyRequest, ApiKeyPatch
 from furiosa.utils import login_account
+from tests import test_data
 
 load_furiosa_config()
 client = login_account(ApiClient())
@@ -68,7 +69,7 @@ class ParserTest(unittest.TestCase):
 
     def test_compile(self):
         request_id = uuid.uuid4().__str__();
-        with open('test_data/MNISTnet_uint8_quant_without_softmax.tflite', 'rb') as file:
+        with open(test_data('MNISTnet_uint8_quant_without_softmax.tflite'), 'rb') as file:
             response = self.compiler_api.create_task(x_request_id=request_id,
                                                      source=file)
             self.assertTrue(response.task_id is not None)
@@ -92,7 +93,7 @@ class ParserTest(unittest.TestCase):
         compiler_config = {
             'keep_unsignedness': 1
         }
-        with open('test_data/MNISTnet_uint8_quant_without_softmax.tflite', 'rb') as file:
+        with open(test_data('MNISTnet_uint8_quant_without_softmax.tflite'), 'rb') as file:
             response = self.compiler_api.create_task(x_request_id=request_id,
                                                      source=file, compiler_config=compiler_config)
             self.assertTrue(response.task_id is not None)

@@ -60,8 +60,8 @@ class CompilerV1Api(object):
                 source (file_type): a byte array of a source image
 
             Keyword Args:
-                target_npu_spec (str): [optional]
-                compiler_config (str): [optional]
+                target_npu_spec (str, none_type): [optional]
+                compiler_config (str, none_type): [optional]
                 target_ir (str): one of followings: dfg, ldfg, cdfg, gir, lir, enf. [optional]
                 compiler_report (bool): include the compiler report if true. [optional]
                 mem_alloc_report (bool): include the memory allocation report. [optional]
@@ -142,6 +142,8 @@ class CompilerV1Api(object):
                     'source',
                 ],
                 'nullable': [
+                    'target_npu_spec',
+                    'compiler_config',
                 ],
                 'enum': [
                 ],
@@ -159,9 +161,9 @@ class CompilerV1Api(object):
                     'source':
                         (file_type,),
                     'target_npu_spec':
-                        (str,),
+                        (str, none_type,),
                     'compiler_config':
-                        (str,),
+                        (str, none_type,),
                     'target_ir':
                         (str,),
                     'compiler_report':
