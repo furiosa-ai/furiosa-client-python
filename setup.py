@@ -31,6 +31,7 @@ setup(
     name='furiosa-client',
     version=find_version("furiosa", "__init__.py"),
     packages=['furiosa'],
+    package_dir={'furiosa': 'furiosa'},
     setup_requires=setup_requires,
     install_requires=install_requires
 )
