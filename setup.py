@@ -2,7 +2,7 @@ import codecs
 import os
 import re
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup_requires = ["setuptools"]
 install_requires = [
@@ -30,8 +30,15 @@ def find_version(*file_paths):
 setup(
     name='furiosa-client',
     version=find_version("furiosa", "__init__.py"),
-    packages=['furiosa'],
-    package_dir={'furiosa': 'furiosa'},
+    description='FuriosaAI API Python Client',
+    author='Hyunsik Choi (Furiosa AI SW Team)',
+    author_email='hyunsik@furiosa.ai',
+    maintainer='Hyunsik Choi (Furiosa AI SW Team)',
+    maintainer_email='hyunsik@furiosa.ai',
+    url='https://furiosa.ai',
+    platforms=['Linux', 'Mac OS X', 'Windows'],
+    license=['Apache License 2.0'],
+    packages=find_packages(),
     setup_requires=setup_requires,
     install_requires=install_requires
 )
