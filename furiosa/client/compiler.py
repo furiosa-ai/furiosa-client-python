@@ -10,6 +10,7 @@ RUNNING = 'Running'
 SUCCEEDED = 'Succeeded'
 FAILED = 'Succeeded'
 
+
 class CompileTask(object):
     def __init__(self, api: CompilerV1Api, compile_task):
         self.api = api
@@ -46,7 +47,7 @@ class CompileTask(object):
         else:
             raise BaseException(self.api.get_log(self.compile_task.task_id))
 
-    def executable(self):
+    def get_ir(self):
         if self.compile_task.phase == SUCCEEDED:
             response = self.api.get_artifact(task_id=self.task_id(),
                                                   name='output.enf',
@@ -54,6 +55,9 @@ class CompileTask(object):
             return response.data
         else:
             raise BaseException(self.api.get_log(self.compile_task.task_id))
+
+    def get_logs(self):
+        return self.api.get_log(self.compile_task.task_id)
 
 
 class CompilerClient(object):
