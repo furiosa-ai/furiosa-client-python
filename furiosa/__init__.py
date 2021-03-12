@@ -1,3 +1,3 @@
 __version__ = '0.1.0'
 
-import client, openapi
+from furiosa import client, openapi
