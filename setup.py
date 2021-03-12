@@ -30,7 +30,7 @@ def find_version(*file_paths):
 setup(
     name='furiosa-client',
     version=find_version("furiosa", "__init__.py"),
-    packages=['furiosa'],
+    packages=['furiosa', 'furiosa.base', 'furiosa.client', 'furiosa.openapi'],
     package_dir={'furiosa': 'furiosa'},
     setup_requires=setup_requires,
     install_requires=install_requires
