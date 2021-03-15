@@ -56,6 +56,9 @@ class CompileTask(object):
     def get_logs(self):
         return self.api.get_log(self.compile_task.task_id)
 
+    def get_error_message(self):
+        return self.compile_task.error_message
+
 
 class CompilerClient(object):
 
