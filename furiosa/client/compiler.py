@@ -26,9 +26,6 @@ class CompileTask(object):
             self.compile_task = self.api.get_task(task_id=self.compile_task.task_id)
             phase = self.compile_task.phase
 
-        if phase == 'Failed':
-            raise BaseException(self.api.get_log(self.compile_task.task_id))
-
     def is_succeeded(self):
         return self.compile_task.phase == SUCCEEDED
 
