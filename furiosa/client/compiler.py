@@ -53,11 +53,38 @@ class CompileTask(object):
         else:
             raise BaseException(self.api.get_log(self.compile_task.task_id))
 
+    def get_compiler_report(self):
+        if self.compile_task.phase == SUCCEEDED:
+            response = self.api.get_artifact(task_id=self.task_id(),
+                                                  name='report.txt')
+            return response
+        else:
+            raise BaseException(self.api.get_log(self.compile_task.task_id))
+
+    def get_memory_alloc_report(self):
+        if self.compile_task.phase == SUCCEEDED:
+            response = self.api.get_artifact(task_id=self.task_id(),
+                                                  name='memory_alloc.html')
+            return response
+        else:
+            raise BaseException(self.api.get_log(self.compile_task.task_id))
+
+    def get_dot_graph(self):
+        if self.compile_task.phase == SUCCEEDED:
+            response = self.api.get_artifact(task_id=self.task_id(),
+                                                  name='graph.gv')
+            return response
+        else:
+            raise BaseException(self.api.get_log(self.compile_task.task_id))
+
     def get_logs(self):
         return self.api.get_log(self.compile_task.task_id)
 
     def get_error_message(self):
-        return self.compile_task.error_message
+        if self.is_succeeded():
+            return None
+        else:
+            return self.compile_task.error_message
 
 
 class CompilerClient(object):
