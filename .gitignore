@@ -3,3 +3,5 @@
 build/
 furiosa_client.egg-info/
 venv/
+*.pyc
+__pycache__
